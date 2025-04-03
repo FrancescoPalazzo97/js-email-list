@@ -2,7 +2,7 @@
 
 const createListItem = (value) => {
     let li = document.createElement(`li`); // Creo un elemento li 
-    li.innerHTML = email; // Inserisco il valore ricevuto prima dalla chiamata AJAX dentro il tag li
+    li.innerHTML = value; // Inserisco il valore ricevuto prima dalla chiamata AJAX dentro il tag li
     document.querySelector(`ul`).appendChild(li); // Lo inserisco dentro la lista
 };
 
