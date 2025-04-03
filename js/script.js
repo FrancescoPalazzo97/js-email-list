@@ -1,3 +1,5 @@
+const emailApi = `https://flynn.boolean.careers/exercises/api/random/mail`
+
 // Functions
 
 const createListItem = (value) => {
@@ -8,7 +10,7 @@ const createListItem = (value) => {
 
 const generateRandomEmail = (x) => {
     for (i = 0; i < x; i++) { // Creo un ciclo che mi ripete la chiamata per x volte, dove x è il numero inserito dall'utente
-        axios.get(`https://flynn.boolean.careers/exercises/api/random/mail`).then(resp => { // Faccio la chimata AJAX
+        axios.get(emailApi).then(resp => { // Faccio la chimata AJAX
             email = resp.data.response // Metto il valore dentro la variabile email
             createListItem(email) // Richiamo la funzione
         })
