@@ -1,4 +1,5 @@
-// Funtions
+// Functions
+
 const createListItem = (value) => {
     let li = document.createElement(`li`); // Creo un elemento li 
     li.innerHTML = email; // Inserisco il valore ricevuto prima dalla chiamata AJAX dentro il tag li
@@ -14,8 +15,17 @@ const generateRandomEmail = (x) => {
     }
 }
 
-const n = parseInt(prompt(`Quante email vuoi generare?`)); // Definisco una variabile che conta quanto email generare
+// Funzione che resetta la lista
+const resetListItem = () => document.querySelector(`ul`).innerHTML = ``
 
-generateRandomEmail(n); // Richiamo la funzione che effettua la chiamata AJAX passandogli il valore inserito dall'utente
+//const n = parseInt(prompt(`Quante email vuoi generare?`)); // Definisco una variabile che conta quanto email generare
+//Dichiaro le variabili necessarie
+const n = 10;
 
+generateRandomEmail(n); // Richiamo la funzione che effettua la chiamata AJAX passandogli il valore di item da generare
 
+document.querySelector(`button`).addEventListener(`click`, () => { // Bonus: inserisco l'evento al click
+    resetListItem(); // Richiamo la funzione che resetta la lista
+    generateRandomEmail(n);// Richiamo nuovamente la funzione che effettua la chiamata AJAX passandogli il valore di item da generare
+}
+);
